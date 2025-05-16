@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PYPP Digital Time & Update Sheet</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+
+    <h1>Time Tracker/update form</h1>
+
+    <!-- Daily Check-In Form -->
+    <form id="signinForm">
+        <h2>Daily Sign-In</h2>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+
+        <label for="location">Location (Workplace)</label>
+        <input type="text" id="location" required />
+
+        <label for="date">Date</label>
+        <input type="date" id="date" required />
+
+        <button type="submit">Sign In</button>
+    </form>
+
+    <!-- Monthly Update Form -->
+    <form id="updateForm">
+        <h2>Monthly Update Sheet</h2>
+        <label for="month">Month</label>
+        <select id="month" required>
+            <option value="">-- Select Month --</option>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+
+        <label for="activities">Summary of Activities</label>
+        <textarea id="activities" rows="6" required
+            placeholder="Describe your tasks, achievements, and challenges..."></textarea>
+
+        <label for="feedback">Additional Comments or Feedback</label>
+        <textarea id="feedback" rows="4" placeholder="Any suggestions or notes?"></textarea>
+
+        <button type="submit">Submit Monthly Update</button>
+    </form>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
