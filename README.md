@@ -34,9 +34,6 @@ A web-based attendance and reporting platform for the **President’s Young Prof
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repo
-```bash
-git clone https://github.com/your-username/pypp-time-update-sheet.git
-cd pypp-time-update-sheet
+
 
 
