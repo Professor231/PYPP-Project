@@ -31,9 +31,3 @@ A web-based attendance and reporting platform for the **President’s Young Prof
 4. **Access:** Admins can view or export reports as needed.
 
 ---
-
-## 🚀 Getting Started
-
-
-
-
