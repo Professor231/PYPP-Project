@@ -12,35 +12,39 @@
 <body>
 
     <!-- Monthly Update Form -->
-    
-    <form id="updateForm">
-        <h2>Monthly Update Sheet</h2>
-        <label for="month">Month</label>
-        <select id="month" required>
-            <option value="">-- Select Month --</option>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
-        </select>
+    <div class="container">
 
-        <label for="activities">Summary of Activities</label>
-        <textarea id="activities" rows="6" required
-            placeholder="Describe your tasks, achievements, and challenges..."></textarea>
+        <form id="updateForm">
+            <h2>Monthly Update Sheet</h2>
+            <label for="month">Month</label>
+            <select id="month" required>
+                <option value="">-- Select Month --</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
 
-        <label for="feedback">Additional Comments or Feedback</label>
-        <textarea id="feedback" rows="4" placeholder="Any suggestions or notes?"></textarea>
+            <label for="activities">Summary of Activities</label>
+            <textarea id="activities" rows="6" required
+                placeholder="Describe your tasks, achievements, and challenges..."></textarea>
 
-        <button type="submit">Submit Monthly Update</button>
-    </form>
+            <label for="feedback">Additional Comments or Feedback</label>
+            <textarea id="feedback" rows="4" placeholder="Any suggestions or notes?"></textarea>
+
+            <button type="submit">Submit Monthly Update</button>
+        </form>
+
+    </div>
+
 
     <script src="script.js"></script>
 

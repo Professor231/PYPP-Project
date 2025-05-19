@@ -53,3 +53,16 @@ document.getElementById("signoutForm").addEventListener("submit", function (e) {
   alert("Sign Out submitted successfully!");
   this.reset();
 });
+
+// handles  update form
+  document.getElementById("updateForm").addEventListener("submit", function (e){
+    e.preventDefault();
+
+    const name = document.getElementById("updateForm").value;
+    const updateFormTime = getCurrentTimestamp();
+
+    console.log(`Update:
+      
+      `)
+  }
+)

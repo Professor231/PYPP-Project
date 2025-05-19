@@ -2,6 +2,9 @@ body {
   font-family: Arial, sans-serif;
   padding: 20px;
   background-color: #f4f4f4;
+  background-image: url(./assets/IE\ day\ 2\ pic\ 1.jpg);
+  background-position: right .75rem center, center right 2.25rem;
+  background-size: 400px 200px,  calc(.75em + .375rem)
 }
 
 .container {
