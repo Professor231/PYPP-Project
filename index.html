@@ -12,34 +12,49 @@
     <div class="container">
         <h1>PYPP Attendance System</h1>
 
+        <!-- <div class="progress-container">
+            <label>Progress bar:</label>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+            <span id="progressText">0%</span>
+        </div> -->
+
         <!-- Sign In Form -->
-        <form id="signinForm">
-            <h2>Sign In</h2>
-            <label for="name">Full Name</label>
-            <input type="text" id="signinName" required />
+        <div class="container">
+            <h1>PYPP Attendance System</h1>
 
-            <label for="department">Entity's Name</label>
-            <input type="text" id="signinEntity" required />
-            <label for="department">Department</label>
-            <input type="text" id="signinDepartment" required />
+            <form id="attendanceForm">
+                <h2>Sign In</h2>
 
-            <button type="submit">Submit</button>
-            <button type="button" id="goToSignOut">Next: Sign Out</button>
-        </form>
+                <label for="signinName">Full Name</label>
+                <input type="text" id="signinName" required />
 
-        <!-- Sign Out Form -->
-        <form id="signoutForm" style="display: none;">
-            <h2>Sign Out</h2>
-            <label for="name">Full Name</label>
-            <input type="text" id="signoutName" required />
+                <label for="signinEntity">Entity's Name</label>
+                <input type="text" id="signinEntity" required />
 
-            <button type="submit">Submit</button>
-            <button type="button" id="goToPrevious">Previous</button>
-            <a href="./update.html">Go to update</a>
-        </form>
-    </div>
+                <label for="signinDepartment">Department</label>
+                <input type="text" id="signinDepartment" required />
 
-    <script src="./src/script.js"></script>
+                <button type="button" id="saveBtn">Save</button>
+
+                <hr />
+
+                <h2>Sign Out</h2>
+
+                <label for="signoutName">Full Name (to confirm sign out)</label>
+                <input type="text" id="signoutName" required />
+
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+
+            <a href="./update.html">Go to Monthly Update</a>
+        </div>
+
+
+        <script src="./src/script.js"></script>
+
+
 </body>
 
 </html>

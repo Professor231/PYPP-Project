@@ -1,68 +1,61 @@
-// Utility to get current timestamp
-function getCurrentTimestamp() {
-  const now = new Date();
-  return now.toLocaleString(); // You can customize the format later
-}
+document.addEventListener("DOMContentLoaded", function () {
+  let savedSignInData = null; // Temporarily stores sign-in data
 
-// Handle Sign In submission
-document.getElementById("signinForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+  const attendanceForm = document.getElementById("attendanceForm");
 
-  const name = document.getElementById("signinName").value;
-  const dept = document.getElementById("signinDepartment").value;
-  const signinTime = getCurrentTimestamp();
+  // Handle Sign In Save
+  document
+    .getElementById("attendanceForm")
+    .addEventListener("click", function () {
+      const name = document.getElementById("signinName").value.trim();
+      const entity = document.getElementById("signinEntity").value.trim();
+      const department = document
+        .getElementById("signinDepartment")
+        .value.trim();
 
-  console.log(`Sign In:
-    Name: ${name}
-    Department: ${dept}
-    Time: ${signinTime}`);
+      if (!name || !entity || !department) {
+        alert("Please fill in all sign-in fields before saving.");
+        return;
+      }
 
-  alert("Sign In submitted successfully!");
+      savedSignInData = {
+        name,
+        entity,
+        department,
+        signInTime: new Date().toLocaleString(),
+      };
 
-  // Reset and optionally clear name/department
-  this.reset();
-});
+      alert("Sign-in data saved. You can now sign out later.");
+    });
 
-// Switch to Sign Out form
-document.getElementById("goToSignOut").addEventListener("click", function () {
-  document.getElementById("signinForm").style.display = "none";
-  document.getElementById("signoutForm").style.display = "flex";
-});
-
-//handles the previous and update button
-document.getElementById("goToPrevious").addEventListener("click", function () {
-  document.getElementById("signoutForm").style.display = "none";
-  document.getElementById("signinForm").style.display = "flex";
-});
-document.getElementById("goToUpdate").addEventListener("click", function () {
-  document.getElementById("signoutForm").style.display = "none";
-  document.getElementById("updateForm").style.display = "flex";
-});
-
-// Handle Sign Out submission
-document.getElementById("signoutForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("signoutName").value;
-  const signoutTime = getCurrentTimestamp();
-
-  console.log(`Sign Out:
-    Name: ${name}
-    Time: ${signoutTime}`);
-
-  alert("Sign Out submitted successfully!");
-  this.reset();
-});
-
-// handles  update form
-  document.getElementById("updateForm").addEventListener("submit", function (e){
+  // Handle Sign Out Submit
+  attendanceForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.getElementById("updateForm").value;
-    const updateFormTime = getCurrentTimestamp();
+    const signoutName = document.getElementById("signoutName").value.trim();
+    const signOutTime = new Date().toLocaleString();
 
-    console.log(`Update:
-      
-      `)
-  }
-)
+    if (!savedSignInData) {
+      alert("Error: No saved sign-in data found.");
+      return;
+    }
+
+    if (signoutName !== savedSignInData.name) {
+      alert("Error: Sign-out name does not match sign-in name.");
+      return;
+    }
+
+    const fullLog = {
+      ...savedSignInData,
+      signOutName: signoutName,
+      signOutTime,
+    };
+
+    console.log("Attendance Record:", fullLog);
+
+    // Reset everything
+    savedSignInData = null;
+    attendanceForm.reset();
+    alert("Sign-out complete. Check console for full log.");
+  });
+});

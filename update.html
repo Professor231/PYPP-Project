@@ -16,8 +16,9 @@
 
         <form id="updateForm">
             <h2>Monthly Update Sheet</h2>
+
             <label for="month">Month</label>
-            <select id="month" required>
+            <select id="month" name="month" required>
                 <option value="">-- Select Month --</option>
                 <option>January</option>
                 <option>February</option>
@@ -34,19 +35,17 @@
             </select>
 
             <label for="activities">Summary of Activities</label>
-            <textarea id="activities" rows="6" required
+            <textarea id="activities" name="activities" rows="6" required
                 placeholder="Describe your tasks, achievements, and challenges..."></textarea>
 
             <label for="feedback">Additional Comments or Feedback</label>
-            <textarea id="feedback" rows="4" placeholder="Any suggestions or notes?"></textarea>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Any suggestions or notes?"></textarea>
 
             <button type="submit">Submit Monthly Update</button>
         </form>
 
-    </div>
 
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 
 </body>
 
