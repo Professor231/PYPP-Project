@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let savedSignInData = null; // Temporarily stores sign-in data
+  let savedSignInData = null;
 
   const attendanceForm = document.getElementById("attendanceForm");
 
-  // Handle Sign In Save
+  // Handle the Sign In Save button
   document
-    .getElementById("attendanceForm")
+    .getElementById("saveSignInBtn")
     .addEventListener("click", function () {
       const name = document.getElementById("signinName").value.trim();
       const entity = document.getElementById("signinEntity").value.trim();
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Sign-in data saved. You can now sign out later.");
     });
 
-  // Handle Sign Out Submit
+  // Handle the Sign Out (Form Submit)
   attendanceForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
