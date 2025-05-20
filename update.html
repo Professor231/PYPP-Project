@@ -4,49 +4,99 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PYPP Attendance System</title>
+    <title>PYPP Monthly Update</title>
     <link rel="stylesheet" href="./src/style.css" />
-
 </head>
 
 <body>
-
-    <!-- Monthly Update Form -->
     <div class="container">
-
         <form id="updateForm">
-            <h2>Monthly Update Sheet</h2>
+            <h2>PYPP Monthly Update</h2>
 
-            <label for="month">Month</label>
-            <select id="month" name="month" required>
-                <option value="">-- Select Month --</option>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
+            <label for="pypName">PYP’s Name:</label>
+            <input type="text" id="pypName" name="pypName" required />
+
+            <label for="updatePeriod">Update Period:</label>
+            <input type="text" id="updatePeriod" name="updatePeriod" required />
+
+            <label for="entity">Entity:</label>
+            <input type="text" id="entity" name="entity" required />
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required />
+
+            <label for="supervisorName">Supervisor’s Name:</label>
+            <input type="text" id="supervisorName" name="supervisorName" required />
+
+            <label for="mentorName">Mentor’s Name:</label>
+            <input type="text" id="mentorName" name="mentorName" required />
+
+            <label for="assignments">Summary of key assignments or duties during this period:</label>
+            <textarea id="assignments" name="assignments" rows="4" required></textarea>
+
+            <label for="dutyChanges">Significant changes to duties during the month:</label>
+            <textarea id="dutyChanges" name="dutyChanges" rows="3"></textarea>
+
+            <label for="contribution">How do you think you have contributed to your host-entity during the period under
+                review?</label>
+            <textarea id="contribution" name="contribution" rows="3" required></textarea>
+
+            <label for="notableExperience">What was your most notable experience during the period?</label>
+            <textarea id="notableExperience" name="notableExperience" rows="3"></textarea>
+
+            <label for="mentorRelationship">How would you describe the relationship between you and your mentor?</label>
+            <textarea id="mentorRelationship" name="mentorRelationship" rows="3" required></textarea>
+
+            <label for="supervisorRelationship">How would you describe the relationship between you and your
+                supervisor?</label>
+            <textarea id="supervisorRelationship" name="supervisorRelationship" rows="3" required></textarea>
+
+            <label for="colleagueRelationship">How would you describe the relationship between you and your
+                colleagues?</label>
+            <textarea id="colleagueRelationship" name="colleagueRelationship" rows="3" required></textarea>
+
+            <label for="worked">What has worked for you at your host-entity?</label>
+            <textarea id="worked" name="worked" rows="3"></textarea>
+
+            <label for="notWorked">What has not worked for you at your host-entity?</label>
+            <textarea id="notWorked" name="notWorked" rows="3"></textarea>
+
+            <label for="addressChallenges">How do you plan to address the challenges highlighted above?</label>
+            <textarea id="addressChallenges" name="addressChallenges" rows="3"></textarea>
+
+            <label for="support">In what ways can your mentor and/or supervisor be of support to you in the upcoming
+                period?</label>
+            <textarea id="support" name="support" rows="3"></textarea>
+
+            <label for="training">What additional training would you like to receive to help improve your job
+                performance?</label>
+            <textarea id="training" name="training" rows="3"></textarea>
+
+            <label for="salaryReceived">Did you receive your last month salary?</label>
+            <select id="salaryReceived" name="salaryReceived" required>
+                <option value="">-- Select an option --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
             </select>
 
-            <label for="activities">Summary of Activities</label>
-            <textarea id="activities" name="activities" rows="6" required
-                placeholder="Describe your tasks, achievements, and challenges..."></textarea>
+            <label for="noSalaryReason">If No, why?</label>
+            <textarea id="noSalaryReason" name="noSalaryReason" rows="2"></textarea>
 
-            <label for="feedback">Additional Comments or Feedback</label>
-            <textarea id="feedback" name="feedback" rows="4" placeholder="Any suggestions or notes?"></textarea>
+            <label for="signature">PYP’s Signature:</label>
+            <input type="text" id="signature" name="signature" required />
+
+            <label for="signedDate">Date:</label>
+            <input type="date" id="signedDate" name="signedDate" required />
 
             <button type="submit">Submit Monthly Update</button>
+
+            <!-- <div id="formOutput" style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; background: #f9f9f9;">
+            </div> -->
+
         </form>
+    </div>
 
-
-        <script src="script.js"></script>
-
+    <script src="./src/script.js"></script>
 </body>
 
 </html>
