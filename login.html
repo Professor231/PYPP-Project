@@ -34,13 +34,20 @@
             cursor: pointer;
         }
     </style>
+
+    <!-- <script>
+        if (!sessionStorage.getItem("isLoggedIn")) {
+            window.location.href = "index.html"; // redirect if not logged in
+        }
+    </script> -->
+
 </head>
 
 <body>
 
     <div id="loginBox">
-        <h2>PYPP Member Login</h2>
-        <input type="email" id="email" placeholder="Enter email" required />
+        <h2>Only a PYP can log in</h2>
+        <input type="email" id="email" placeholder="Enter username" required />
         <input type="password" id="password" placeholder="Enter password" required />
         <button onclick="login()">Login</button>
         <p id="loginError" style="color:red;"></p>
@@ -49,7 +56,7 @@
     <div id="formPage">
         <h2>Welcome to PYPP Form Portal</h2>
         <p>You are logged in.</p>
-        <a href="update-form.html">👉 Go to Update Form</a><br /><br />
+        <a href="./index.html">👉 Go to Update Form</a><br /><br />
         <button onclick="logout()">Logout</button>
     </div>
 
