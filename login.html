@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PYPP Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        #loginBox,
+        #formPage {
+            display: none;
+            padding: 20px;
+            background: white;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loginBox">
+        <h2>PYPP Member Login</h2>
+        <input type="email" id="email" placeholder="Enter email" required />
+        <input type="password" id="password" placeholder="Enter password" required />
+        <button onclick="login()">Login</button>
+        <p id="loginError" style="color:red;"></p>
+    </div>
+
+    <div id="formPage">
+        <h2>Welcome to PYPP Form Portal</h2>
+        <p>You are logged in.</p>
+        <a href="update-form.html">👉 Go to Update Form</a><br /><br />
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="./src/script.js"></script>
+</body>
+
+</html>

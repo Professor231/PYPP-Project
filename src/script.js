@@ -90,67 +90,84 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`${label}: ${data[key]}`);
     }
     console.log("----------------------------------------");
-
-    // Alert confirmation
-    alert("Your monthly update has been successfully submitted!");
   });
 });
 
-// function formatLabel(key) {
-//   return key
-//     .replace(/([a-z])([A-Z])/g, "$1 $2") // add space before capital letters
-//     .replace(/^./, (str) => str.toUpperCase()); // capitalize first letter
-// }
+//handles the thank you page
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const form = document.getElementById("updateForm");
+function formatLabel(key) {
+  return key
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/^./, (str) => str.toUpperCase());
+}
 
-//   form.addEventListener("submit", function (e) {
-//     e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("updateForm");
 
-//     const formData = new FormData(form);
-//     const data = {};
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-//     // Collect all form data
-//     formData.forEach((value, key) => {
-//       data[key] = value;
-//     });
+    const formData = new FormData(form);
+    const data = {};
 
-//     // Console Output
-//     console.log("---- PYPP Monthly Update Submission ----");
-//     for (const key in data) {
-//       console.log(`${key}: ${data[key]}`);
-//     }
-//     console.log("----------------------------------------");
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
 
-//     // Alert confirmation
-//     alert("Your monthly update has been successfully submitted!");
+    console.log("---- PYPP Monthly Update Submission ----");
+    for (const key in data) {
+      console.log(`${formatLabel(key)}: ${data[key]}`);
+    }
+    console.log("----------------------------------------");
 
-//     // Optional: Display formatted data on the page
+    // Redirect to Thank You page
+    window.location.href = "thankyou.html";
+  });
+});
 
-//     console.log("---- PYPP Monthly Update Submission ----");
-//     console.log("PYP Name:", pypName);
-//     console.log("Update Period:", updatePeriod);
-//     console.log("Entity:", entity);
-//     console.log("Department:", department);
-//     console.log("Supervisor Name:", supervisorName);
-//     console.log("Mentor Name:", mentorName);
-//     console.log("Key Assignments/Duties:", assignments);
-//     console.log("Significant Duty Changes:", dutyChanges);
-//     console.log("Contribution to Host Entity:", contribution);
-//     console.log("Most Notable Experience:", notableExperience);
-//     console.log("Mentor Relationship:", mentorRelationship);
-//     console.log("Supervisor Relationship:", supervisorRelationship);
-//     console.log("Colleague Relationship:", colleagueRelationship);
-//     console.log("What Worked:", worked);
-//     console.log("What Didn’t Work:", notWorked);
-//     console.log("How Challenges Will Be Addressed:", addressChallenges);
-//     console.log("Requested Support from Mentor/Supervisor:", support);
-//     console.log("Additional Training Needed:", training);
-//     console.log("Salary Received:", salaryReceived);
-//     console.log("If No, Why:", noSalaryReason);
-//     console.log("PYP’s Signature:", signature);
-//     console.log("Date Signed:", signedDate);
-//     console.log("----------------------------------------");
-//   });
-// });
+//for the login
+
+// Predefined users (in base64 format for simple obfuscation)
+const users = {
+  "james.gaygay@pypp.org": "cGFzc3dvcmQxMjM=", // password123
+  "alice.doe@pypp.org": "bXlTZWN1cmVQYXNz", // mySecurePass
+};
+
+// Run on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+  const loginBox = document.getElementById("loginBox");
+  const formPage = document.getElementById("formPage");
+
+  if (isLoggedIn) {
+    formPage.style.display = "block";
+  } else {
+    loginBox.style.display = "block";
+  }
+});
+
+// Simple Base64 encoder
+function encode(str) {
+  return btoa(str);
+}
+
+// Login function
+function login() {
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const password = document.getElementById("password").value;
+  const encoded = encode(password);
+
+  if (users[email] && users[email] === encoded) {
+    sessionStorage.setItem("isLoggedIn", "true");
+    location.reload();
+  } else {
+    document.getElementById("loginError").textContent =
+      "Invalid email or password.";
+  }
+}
+
+// Logout function
+function logout() {
+  sessionStorage.clear();
+  location.reload();
+}
