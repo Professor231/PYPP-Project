@@ -127,11 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //for the login
 
-// Predefined users (in base64 format for simple obfuscation)
+// Predefined users (in base64 format for simple obfuscation) 
 const users = {
-  // "james.gaygay@pypp.org": "cGFzc3dvcmQxMjM=", // password123
-  // "alice.doe@pypp.org": "bXlTZWN1cmVQYXNz", // mySecurePass
-
   pyp2024_20: "cHlwY3hpaV8yMA==", // pypcxii_20
   pyp2024_21: "cHlwY3hpaV8yMQ==", // pypcxii_21
   pyp2024_22: "cHlwY3hpaV8yMg==", // pypcxii_22

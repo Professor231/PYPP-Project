@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PYPP Monthly Update</title>
+    <title>Monthly Update</title>
     <link rel="stylesheet" href="./src/style.css" />
 </head>
 
@@ -14,7 +14,7 @@
         <button id="logoutBtn" style="float: right; margin: 10px;">Logout</button>
 
         <form id="updateForm">
-            <h2>PYPP Monthly Update</h2>
+            <h2>Monthly Update</h2>
 
             <label for="pypName">PYP’s Name:</label>
             <input type="text" id="pypName" name="pypName" required />
@@ -99,7 +99,6 @@
         </form>
     </div>
 
-
     <script>
         // Redirect to login if not logged in
         if (!sessionStorage.getItem("isLoggedIn")) {
@@ -118,7 +117,7 @@
     <script src="./src/script.js"></script>
 
     <!-- Logout Confirmation Modal -->
-    <div id="logoutModal" class="modal-overlay">
+    <!-- <div id="logoutModal" class="modal-overlay">
         <div class="modal-box">
             <p>Are you sure you want to log out?</p>
             <div class="modal-actions">
@@ -126,8 +125,7 @@
                 <button id="cancelLogout">Cancel</button>
             </div>
         </div>
-    </div>
-
+    </div> -->
 
 </body>
 
