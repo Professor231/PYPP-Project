@@ -63,40 +63,49 @@ document.addEventListener("DOMContentLoaded", function () {
 //Update form
 
 // Helper function to format camelCase to readable labels
-function formatLabel(key) {
-  return key
-    .replace(/([a-z])([A-Z])/g, "$1 $2") // insert space before capital letters
-    .replace(/^./, (str) => str.toUpperCase()); // capitalize the first letter
-}
+// function formatLabel(key) {
+//   return key
+//     .replace(/([a-z])([A-Z])/g, "$1 $2") // insert space before capital letters
+//     .replace(/^./, (str) => str.toUpperCase()); // capitalize the first letter
+// }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("updateForm");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const form = document.getElementById("updateForm");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+//   form.addEventListener("submit", function (e) {
+//     e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = {};
+//     const formData = new FormData(form);
+//     const data = {};
 
-    // Collect form inputs into an object
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
+//     formData.forEach((value, key) => {
+//       data[key] = value;
+//     });
 
-    // Console Output with formatted labels
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbyjvBq0hUGnFpEh60VQ9xaDCJNrfWgNsTPd87geVUtg9tPJn6zNIi2phprjQBWPKJE/exec "; // <-- replace with your actual script URL
-
-    fetch(scriptURL, {
-      method: "POST",
-      body: formData,
-    }).then((result) => {
-      console.log("Server response:", result);
-      alert("Form submitted successfully!");
-      window.location.href = "thanks.html"; // optional
-    });
-  });
-});
+// Send data to Google Apps Script
+// fetch(
+//   "https://script.google.com/macros/s/AKfycbyjvBq0hUGnFpEh60VQ9xaDCJNrfWgNsTPd87geVUtg9tPJn6zNIi2phprjQBWPKJE/exec",
+//   {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(data),
+//   }
+// )
+//       .then((res) => res.json())
+//       .then((response) => {
+//         if (response.success) {
+//           alert("Form submitted successfully!");
+//         } else {
+//           alert("Submission failed: " + response.message);
+//         }
+//       })
+//       .catch((error) => {
+//         alert("Error submitting form: " + error);
+//       });
+//   });
+// });
 
 //handles the thank you page
 
