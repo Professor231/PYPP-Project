@@ -93,13 +93,16 @@
 
             <button type="submit">Submit Monthly Update</button>
 
-            <!-- <div id="formOutput" style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; background: #f9f9f9;">
-            </div> -->
 
         </form>
     </div>
 
     <script>
+
+        // if (sessionStorage.getItem("role") !== "pyp") {
+        //     window.location.href = "login.html"; // block unauthorized roles
+        // }
+
         // Redirect to login if not logged in
         if (!sessionStorage.getItem("isLoggedIn")) {
             window.location.href = "index.html";
@@ -114,18 +117,35 @@
             }
         });
     </script>
+
+
+    <script>
+
+        const form = document.getElementById("updateForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = {};
+
+            // Collect form data
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Display thank-you confirmation (or redirect to thank-you page if you have one)
+            alert("Your monthly update has been successfully submitted!");
+
+            // OPTIONAL: Save to Google Sheet via Apps Script (if already integrated)
+
+            // Clear session and redirect to login page
+            sessionStorage.clear(); // 🔐 Log out
+            window.location.href = "login.html"; // 🔁 Redirect to login
+        });
+    </script>
     <script src="./src/script.js"></script>
 
-    <!-- Logout Confirmation Modal -->
-    <!-- <div id="logoutModal" class="modal-overlay">
-        <div class="modal-box">
-            <p>Are you sure you want to log out?</p>
-            <div class="modal-actions">
-                <button id="confirmLogout">Yes, log out</button>
-                <button id="cancelLogout">Cancel</button>
-            </div>
-        </div>
-    </div> -->
 
 </body>
 

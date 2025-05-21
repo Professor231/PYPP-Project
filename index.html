@@ -9,51 +9,39 @@
 </head>
 
 <body>
+    <!-- Sign In Form -->
     <div class="container">
-        <h1>PYPP Attendance System</h1>
 
-        <!-- <div class="progress-container">
-            <label>Progress bar:</label>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
-            </div>
-            <span id="progressText">0%</span>
-        </div> -->
+        <form id="attendanceForm">
+            <h2>Sign In</h2>
 
-        <!-- Sign In Form -->
-        <div class="container">
-            <h1>PYPP Attendance System</h1>
+            <label for="signinName">Full Name</label>
+            <input type="text" id="signinName" required />
 
-            <form id="attendanceForm">
-                <h2>Sign In</h2>
+            <label for="signinEntity">Entity's Name</label>
+            <input type="text" id="signinEntity" required />
 
-                <label for="signinName">Full Name</label>
-                <input type="text" id="signinName" required />
+            <label for="signinDepartment">Department</label>
+            <input type="text" id="signinDepartment" required />
 
-                <label for="signinEntity">Entity's Name</label>
-                <input type="text" id="signinEntity" required />
-
-                <label for="signinDepartment">Department</label>
-                <input type="text" id="signinDepartment" required />
-
-                <button type="button" id="saveSignInBtn">Save Sign In</button>
+            <button type="button" id="saveSignInBtn">Save Sign In</button>
 
 
-                <hr />
+            <hr />
 
-                <h2>Sign Out</h2>
+            <h2>Sign Out</h2>
 
-                <label for="signoutName">Full Name (to confirm sign out)</label>
-                <input type="text" id="signoutName" required />
+            <label for="signoutName">Full Name (to confirm sign out)</label>
+            <input type="text" id="signoutName" required />
 
-                <button type="submit" id="submitBtn">Submit</button>
-            </form>
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
 
-            <a href="./update.html">Go to Monthly Update</a>
-        </div>
+        <a href="./update.html">Go to Monthly Update</a>
+    </div>
 
+    <script src="./src/script.js"></script>
 
-        <script src="./src/script.js"></script>
 
 
 </body>

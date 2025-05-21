@@ -84,12 +84,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Console Output with formatted labels
-    console.log("---- PYPP Monthly Update Submission ----");
-    for (const key in data) {
-      const label = formatLabel(key);
-      console.log(`${label}: ${data[key]}`);
-    }
-    console.log("----------------------------------------");
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbyjvBq0hUGnFpEh60VQ9xaDCJNrfWgNsTPd87geVUtg9tPJn6zNIi2phprjQBWPKJE/exec "; // <-- replace with your actual script URL
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: formData,
+    }).then((result) => {
+      console.log("Server response:", result);
+      alert("Form submitted successfully!");
+      window.location.href = "thanks.html"; // optional
+    });
   });
 });
 
@@ -127,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //for the login
 
-// Predefined users (in base64 format for simple obfuscation) 
+// Predefined users (in base64 format for simple obfuscation)
 const users = {
   pyp2024_20: "cHlwY3hpaV8yMA==", // pypcxii_20
   pyp2024_21: "cHlwY3hpaV8yMQ==", // pypcxii_21
@@ -153,22 +158,81 @@ function encode(str) {
 }
 
 // Login function
-function login() {
-  const email = document.getElementById("email").value.trim().toLowerCase();
-  const password = document.getElementById("password").value;
-  const encoded = encode(password);
 
-  if (users[email] && users[email] === encoded) {
-    sessionStorage.setItem("isLoggedIn", "true");
-    location.reload();
+// function login() {
+//   const userName = document.getElementById("userName").value.trim();
+//   const password = document.getElementById("password").value.trim();
+
+//   const users = {
+//     pyp2024_20: "pypcxii_20",
+//     pyp2024_21: "pypcxii_21",
+//   };
+
+//   const encodedPassword = btoa(password);
+
+//   if (
+//     (users[userName] && users[userName] === password) ||
+//     users[userName] === encodedPassword
+//   ) {
+//     sessionStorage.setItem("isLoggedIn", true);
+//     sessionStorage.setItem("user", userName);
+//     window.location.href = "index.html"; // 🚀 redirect directly to the form
+//   } else {
+//     document.getElementById("loginError").textContent =
+//       "Invalid username or password.";
+//   }
+// }
+
+function login() {
+  const userName = document.getElementById("userName").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  const users = {
+    pyp2024_20: "pypcxii_20",
+    pyp2024_21: "pypcxii_21",
+  };
+
+  const encodedPassword = btoa(password);
+
+  const loginError = document.getElementById("loginError");
+  const loadingMessage = document.getElementById("loadingMessage");
+
+  if (
+    (users[userName] && users[userName] === password) ||
+    users[userName] === encodedPassword
+  ) {
+    // Show loading message
+    loginError.textContent = "";
+    loadingMessage.style.display = "block";
+
+    // Simulate loading delay (2 seconds)
+    setTimeout(() => {
+      sessionStorage.setItem("isLoggedIn", true);
+      sessionStorage.setItem("user", userName);
+      window.location.href = "index.html"; // Redirect to form
+    }, 2000); // 2000ms = 2 seconds
   } else {
-    document.getElementById("loginError").textContent =
-      "Invalid email or password.";
+    loginError.textContent = "Invalid username or password.";
+    loadingMessage.style.display = "none";
   }
 }
 
-// Logout function
-function logout() {
-  sessionStorage.clear();
-  location.reload();
-}
+// function login() {
+//   const email = document.getElementById("email").value.trim().toLowerCase();
+//   const password = document.getElementById("password").value;
+//   const encoded = encode(password);
+
+//   if (users[email] && users[email] === encoded) {
+//     sessionStorage.setItem("isLoggedIn", "true");
+//     location.reload();
+//   } else {
+//     document.getElementById("loginError").textContent =
+//       "Invalid email or password.";
+//   }
+// }
+
+// // Logout function
+// function logout() {
+//   sessionStorage.clear();
+//   location.reload();
+// }
