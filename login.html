@@ -40,10 +40,20 @@
 <body>
 
     <div id="loginBox">
-        <h2>Only a PYP can log in</h2>
+        <h2>Login</h2>
+
         <input type="text" id="userName" placeholder="Enter username" required />
+
         <input type="password" id="password" placeholder="Enter password" required />
+
+        <select id="role" required>
+            <option value=""> Select Role </option>
+            <option value="pyp">PYP</option>
+            <option value="supervisor">Supervisor</option>
+        </select>
+
         <button onclick="login()">Login</button>
+
         <p id="loginError" style="color:red;"></p>
         <p id="loadingMessage" style="color:green; display:none;">Loading... Please wait</p>
     </div>

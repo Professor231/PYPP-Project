@@ -9,9 +9,7 @@
 </head>
 
 <body>
-    <!-- Sign In Form -->
     <div class="container">
-
         <form id="attendanceForm">
             <h2>Sign In</h2>
 
@@ -26,7 +24,6 @@
 
             <button type="button" id="saveSignInBtn">Save Sign In</button>
 
-
             <hr />
 
             <h2>Sign Out</h2>
@@ -34,16 +31,20 @@
             <label for="signoutName">Full Name (to confirm sign out)</label>
             <input type="text" id="signoutName" required />
 
-            <button type="submit" id="submitBtn">Submit</button>
+            <button type="button" id="saveSignOutBtn">Save Sign Out</button>
+
+            <h3>Review Monthly Attendance</h3>
+            <div id="attendancePreview"></div>
+
+
+            <hr />
+            <button type="button" id="submitMonthlyBtn">Submit Monthly Report</button>
         </form>
 
         <a href="./update.html">Go to Monthly Update</a>
     </div>
 
     <script src="./src/script.js"></script>
-
-
-
 </body>
 
 </html>

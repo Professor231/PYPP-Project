@@ -102,84 +102,16 @@
         document.getElementById("updateForm").addEventListener("submit", function (e) {
             e.preventDefault();
 
-            const form = e.target;
-            const formData = new FormData(form);
-            const data = {};
+            // Show success message
+            // alert("Your monthly update has been successfully submitted!");
 
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-
-            fetch("https://script.google.com/macros/s/AKfycbyjvBq0hUGnFpEh60VQ9xaDCJNrfWgNsTPd87geVUtg9tPJn6zNIi2phprjQBWPKJE/exec", {
-                method: "POST",
-                mode: "no-cors",  // Use 'cors' if you're handling the response
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
-                .then(() => {
-                    alert("Form submitted!");
-                    form.reset();
-                })
-                .catch(error => {
-                    console.error("Submission error:", error);
-                    alert("Form submission failed.");
-                });
+            // Clear session and redirect to login page
+            sessionStorage.clear();
+            // window.location.href = "login.html";
         });
     </script>
 
-
-
-    <script>
-
-        // if (sessionStorage.getItem("role") !== "pyp") {
-        //     window.location.href = "login.html"; // block unauthorized roles
-        // }
-
-        // Redirect to login if not logged in
-        // if (!sessionStorage.getItem("isLoggedIn")) {
-        //     window.location.href = "index.html";
-        // }
-
-        // Logout button with confirmation
-        //     document.getElementById("logoutBtn").addEventListener("click", function () {
-        //         const confirmLogout = confirm("Are you sure you want to log out?");
-        //         if (confirmLogout) {
-        //             sessionStorage.clear();
-        //             window.location.href = "index.html"; // Redirect to login page
-        //         }
-        //     });
-        // </script>
-
-
-    <!-- <script>
-
-        const form = document.getElementById("updateForm");
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(form);
-            const data = {};
-
-            // Collect form data
-            formData.forEach((value, key) => {
-                data[key] = value;
-            }); -->
-
-    // Display thank-you confirmation (or redirect to thank-you page if you have one)
-    alert("Your monthly update has been successfully submitted!");
-
-    // OPTIONAL: Save to Google Sheet via Apps Script (if already integrated)
-
-    // Clear session and redirect to login page
-    sessionStorage.clear(); // 🔐 Log out
-    window.location.href = "login.html"; // 🔁 Redirect to login
-    <!-- });
-    </script> -->
     <script src="./src/script.js"></script>
-
 
 </body>
 
